@@ -4,10 +4,9 @@ import './index.css';
 // import Card from './Component/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'bootstrap-icons/font/bootstrap-icons.css'
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import reportWebVitals from './reportWebVitals';
-import Product from './Component/Products';
+// import Product from './Component/Products';
 import Products from './Component/Products';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

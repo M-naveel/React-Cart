@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import Card from './Card'
-import Footer from './Footer'
+import Card from './Card';
+import Footer from './Footer';
+// import Weather from './Weather';
 
 function Products() {
     {/* this will be the product page and here we will call the cards to show it my aim is to get the most of reuseable component */ }
@@ -30,12 +31,13 @@ function Products() {
         fetch('https://makeup-api.herokuapp.com/api/v1/products.json').then(function (res) {return res.json()}),
      fetch('https://api.escuelajs.co/api/v1/products').then(function (res) {return res.json()}), fetch('https://fake-store-api.mock.beeceptor.com/api/products').then(function(res){
         return res.json();})])
-            .then(([user, dummy,makeUp , webdata, fakepro]) =>{
+            .then(([user, dummy,makeUp , webdata, fakepro ]) =>{
                 setUser(user);
                 setWebdata(dummy);
                 setMakeUp(makeUp)
                 setDummy(webdata);
                 setFakepro(fakepro);
+                // setweather(weather)
 
             }
             )
@@ -47,7 +49,7 @@ function Products() {
                 setLoading(false)
             })}, [])
             
-        
+            
         //   Total of cart items
             useEffect(() => {
               const sum = cart.reduce((acc, item) => acc + Number(item.price || 0), 0)
@@ -62,6 +64,7 @@ function Products() {
                 // console.log('added')
                 setCartnotify(prev => prev + 1)}
             
+      
               if (loading) {
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '60vh' }}>
@@ -100,6 +103,7 @@ function Products() {
             <Card title="Clothes" data={webdata} filterkey="title" placeholder="search for title" addtoCart={addtoCart}/>
             <Card title="Products" data={fakepro} filterkey="name" placeholder="search for name" addtoCart={addtoCart}/>
             <Card title="Makeup" data={makeUp} filterkey="name" placeholder="search for title" addtoCart={addtoCart}/>
+           
             <Footer />
 
 
